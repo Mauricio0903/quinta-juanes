@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quinta Juanes – Centro de Eventos | Calderitas, Quintana Roo</title>
 <meta name="description" content="El espacio más especial de Calderitas para tus eventos. Alberca, palapa, jardín tropical y estacionamiento propio. XV años, cumpleaños, bodas y reuniones familiares.">
-<meta name="google-site-verification" content="XfvfirO0Bv-ak1vgAiEMCnYMdFAo1Urhm5_ff7WfzYM" />
 <meta property="og:title" content="Quinta Juanes – Centro de Eventos">
 <meta property="og:description" content="Celebra rodeado de naturaleza tropical en Calderitas, Q.R. Reserva tu fecha hoy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +55,12 @@ a { text-decoration:none; color:inherit; }
   backdrop-filter:blur(20px);
 }
 .nav-marca {
-  display:flex; flex-direction:column; line-height:1;
+  display:flex; align-items:center; gap:.75rem; line-height:1;
+}
+.nav-marca img {
+  width:42px; height:42px; border-radius:50%;
+  object-fit:cover; flex-shrink:0;
+  border:1.5px solid rgba(201,168,76,0.3);
 }
 .nav-marca-top {
   font-family:'Cormorant', serif;
@@ -521,8 +525,11 @@ footer {
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-marca">
-    <span class="nav-marca-top">Quinta Juanes</span>
-    <span class="nav-marca-sub">Centro de Eventos · Calderitas</span>
+    <img src="logo.jpg" alt="Quinta Juanes">
+    <div>
+      <span class="nav-marca-top">Quinta Juanes</span>
+      <span class="nav-marca-sub">Centro de Eventos · Calderitas</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#nosotros">Nosotros</a></li>
@@ -838,9 +845,12 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-marca">
-    Quinta Juanes
-    <span>Centro de Eventos · Calderitas, Q.R.</span>
+  <div class="footer-marca" style="display:flex;align-items:center;gap:.8rem;">
+    <img src="logo.jpg" alt="Quinta Juanes" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(201,168,76,0.3);">
+    <div>
+      <p style="font-family:'Cormorant',serif;font-size:1.1rem;font-weight:600;color:var(--dorado-v);">Quinta Juanes</p>
+      <span>Centro de Eventos · Calderitas, Q.R.</span>
+    </div>
   </div>
   <p class="footer-copy">
     Coahuila Nte. 314 y 318, Calderitas, Q.R.<br>
@@ -849,7 +859,7 @@ footer {
   <div class="footer-redes">
     <a href="https://instagram.com/quinta.juanes" target="_blank">Instagram</a>
     <a href="https://wa.me/529831559045" target="_blank">WhatsApp</a>
-    <a href="https://facebook.com/quintajuanes" target="_blank">Facebook</a>
+    <a href="https://www.facebook.com/people/Quinta-Juanes/pfbid036GnqRcEcZ6BwxDfj9QMyJ6tAymZjSHeTw5qak6CyDyqDQWc54qeVutKKfXdKaw9yl/" target="_blank">Facebook</a>
   </div>
 </footer>
 
