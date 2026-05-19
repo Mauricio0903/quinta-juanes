@@ -4,518 +4,379 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quinta Juanes – Centro de Eventos | Calderitas, Quintana Roo</title>
-<meta name="description" content="El espacio más especial de Calderitas para tus eventos. Alberca, palapa, jardín tropical y estacionamiento propio. XV años, cumpleaños, bodas y reuniones familiares.">
-<meta property="og:title" content="Quinta Juanes – Centro de Eventos">
+<meta name="description" content="El espacio más especial de Calderitas para tus eventos. Alberca, 3 palapas, jardín tropical y estacionamiento. XV años, cumpleaños, bodas y reuniones familiares.">
+<meta name="google-site-verification" content="XfvfirO0Bv-ak1vgAiEMCnYMdFAo1Urhm5_ff7WfzYM" />
+<meta property="og:title" content="Quinta Juanes – Centro de Eventos | Calderitas">
 <meta property="og:description" content="Celebra rodeado de naturaleza tropical en Calderitas, Q.R. Reserva tu fecha hoy.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ── */
 :root {
-  --negro:     #0a0e0b;
-  --selva:     #0f2218;
-  --bosque:    #1a3d2b;
-  --palma:     #2d6644;
-  --musgo:     #4a8a5e;
-  --agua:      #5bbcb0;
-  --agua-claro:#8dd4cc;
-  --arena:     #f2ead8;
-  --crema:     #faf6ee;
-  --dorado:    #c9a84c;
-  --dorado-v:  #e8c96a;
-  --blanco:    #ffffff;
-  --texto:     #111a14;
-  --gris:      #5a6b5f;
-
-  --r-sm: 8px;
-  --r-md: 16px;
-  --r-lg: 28px;
-  --r-xl: 48px;
+  --negro:   #080c09;
+  --carbon:  #111711;
+  --profundo:#1a2e1e;
+  --bosque:  #243d28;
+  --salvia:  #6b9a72;
+  --menta:   #a8c5ab;
+  --arena:   #f0e8d5;
+  --crema:   #faf7f0;
+  --oro:     #b8923a;
+  --oro-v:   #d4aa55;
+  --blanco:  #ffffff;
+  --gris:    #6b7c6e;
+  --r:       12px;
+  --r-lg:    24px;
+  --r-xl:    48px;
 }
-
-/* ── RESET ── */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
-body { font-family:'Outfit', sans-serif; background:var(--crema); color:var(--texto); overflow-x:hidden; }
-img { display:block; max-width:100%; }
-a { text-decoration:none; color:inherit; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--crema);color:var(--carbon);overflow-x:hidden;}
+img{display:block;max-width:100%;height:auto;}
+a{text-decoration:none;color:inherit;}
 
 /* ── NAV ── */
-#nav {
-  position:fixed; top:0; left:0; right:0; z-index:900;
-  height:70px;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 3rem;
-  background:rgba(10,14,11,0);
-  transition:background .4s, box-shadow .4s;
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+  transition:background .4s,backdrop-filter .4s;
 }
-#nav.scrolled {
-  background:rgba(10,14,11,0.96);
-  box-shadow:0 1px 0 rgba(201,168,76,0.15);
+#nav.scrolled{
+  background:rgba(8,12,9,0.94);
   backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(184,146,58,0.12);
 }
-.nav-marca {
-  display:flex; align-items:center; gap:.75rem; line-height:1;
+.nav-logo{display:flex;align-items:center;gap:.7rem;}
+.nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(184,146,58,0.4);}
+.nav-logo-txt{display:flex;flex-direction:column;line-height:1.1;}
+.nav-logo-nom{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:400;color:var(--oro-v);letter-spacing:.02em;}
+.nav-logo-sub{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,232,213,0.4);margin-top:1px;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,232,213,0.65);transition:color .2s;}
+.nav-links a:hover{color:var(--oro-v);}
+.nav-cta{
+  background:var(--oro)!important;color:var(--negro)!important;
+  padding:.45rem 1.2rem;border-radius:var(--r-xl);
+  font-weight:500!important;letter-spacing:.08em!important;
+  transition:background .2s,transform .15s!important;
 }
-.nav-marca img {
-  width:42px; height:42px; border-radius:50%;
-  object-fit:cover; flex-shrink:0;
-  border:1.5px solid rgba(201,168,76,0.3);
+.nav-cta:hover{background:var(--oro-v)!important;transform:translateY(-1px);}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.ham span{display:block;width:22px;height:1.5px;background:var(--arena);border-radius:2px;transition:transform .3s,opacity .3s;}
+.ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mob-menu{
+  display:none;position:fixed;inset:0;z-index:800;
+  background:rgba(8,12,9,0.98);
+  flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;
 }
-.nav-marca-top {
-  font-family:'Cormorant', serif;
-  font-size:1.35rem; font-weight:600; letter-spacing:.06em;
-  color:var(--dorado-v);
-}
-.nav-marca-sub {
-  font-size:.6rem; letter-spacing:.22em; text-transform:uppercase;
-  color:rgba(242,234,216,0.45); margin-top:2px;
-}
-.nav-links {
-  display:flex; align-items:center; gap:2.2rem; list-style:none;
-}
-.nav-links a {
-  font-size:.75rem; font-weight:400; letter-spacing:.14em;
-  text-transform:uppercase; color:rgba(242,234,216,0.7);
-  transition:color .2s;
-}
-.nav-links a:hover { color:var(--dorado-v); }
-.nav-reserva {
-  font-size:.72rem !important; font-weight:600 !important;
-  color:var(--selva) !important;
-  background:var(--dorado);
-  padding:.5rem 1.3rem; border-radius:var(--r-xl);
-  letter-spacing:.1em !important;
-  transition:background .2s, transform .15s !important;
-}
-.nav-reserva:hover { background:var(--dorado-v) !important; transform:translateY(-1px); }
-
-/* Hamburguesa */
-.hamburger {
-  display:none; flex-direction:column; gap:5px; cursor:pointer;
-  background:none; border:none; padding:4px;
-}
-.hamburger span {
-  display:block; width:24px; height:2px;
-  background:var(--arena); border-radius:2px;
-  transition:transform .3s, opacity .3s;
-}
-.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity:0; }
-.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-
-.nav-mobile {
-  display:none; position:fixed; top:70px; left:0; right:0; bottom:0;
-  background:rgba(10,14,11,0.98); z-index:800;
-  flex-direction:column; align-items:center; justify-content:center; gap:2.5rem;
-}
-.nav-mobile.open { display:flex; }
-.nav-mobile a {
-  font-size:1.6rem; font-family:'Cormorant',serif; font-weight:300;
-  color:var(--arena); letter-spacing:.08em;
-}
-.nav-mobile a:hover { color:var(--dorado-v); }
-.nav-mobile .nav-reserva-m {
-  font-family:'Outfit',sans-serif;
-  font-size:.85rem; font-weight:600; letter-spacing:.15em;
-  text-transform:uppercase; color:var(--selva);
-  background:var(--dorado); padding:.8rem 2rem; border-radius:var(--r-xl);
+.mob-menu.open{display:flex;}
+.mob-menu a{font-family:'Fraunces',serif;font-size:2rem;font-weight:300;color:var(--arena);letter-spacing:.04em;transition:color .2s;}
+.mob-menu a:hover{color:var(--oro-v);}
+.mob-cta{
+  font-family:'Inter',sans-serif!important;font-size:.85rem!important;
+  font-weight:500!important;letter-spacing:.15em!important;text-transform:uppercase;
+  background:var(--oro);color:var(--negro)!important;
+  padding:.85rem 2.2rem;border-radius:var(--r-xl);
 }
 
 /* ── HERO ── */
-#hero {
-  height:100svh; min-height:640px;
-  position:relative; display:flex; align-items:flex-end;
-  padding:0 3rem 5rem;
-  overflow:hidden;
+#hero{
+  height:100svh;min-height:600px;
+  position:relative;display:flex;align-items:flex-end;
+  padding:0 2.5rem 5rem;overflow:hidden;
 }
-.hero-foto {
-  position:absolute; inset:0;
-  background:url('quinta_noche.webp') center/cover no-repeat;
-  animation:zoom 22s ease-in-out infinite alternate;
+.hero-img{
+  position:absolute;inset:0;
+  background:url('quinta_vista1.jpg') center/cover no-repeat;
+  animation:zoom 24s ease-in-out infinite alternate;
 }
-@keyframes zoom { from{transform:scale(1.07)} to{transform:scale(1.0)} }
-.hero-overlay {
-  position:absolute; inset:0;
+@keyframes zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-grad{
+  position:absolute;inset:0;
   background:
-    linear-gradient(to right, rgba(10,14,11,0.7) 0%, rgba(10,14,11,0.1) 100%),
-    linear-gradient(to top, rgba(10,14,11,0.9) 0%, rgba(10,14,11,0.0) 55%);
+    linear-gradient(to right,rgba(8,12,9,.75) 0%,rgba(8,12,9,.05) 70%),
+    linear-gradient(to top,rgba(8,12,9,.92) 0%,rgba(8,12,9,0) 55%);
 }
-.hero-contenido {
-  position:relative; z-index:2;
-  max-width:620px;
+.hero-cont{position:relative;z-index:2;max-width:580px;}
+.hero-label{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.65rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--oro-v);margin-bottom:1.2rem;
 }
-.hero-etiqueta {
-  display:inline-flex; align-items:center; gap:.6rem;
-  border:1px solid rgba(201,168,76,0.4); color:var(--dorado-v);
-  padding:.35rem 1rem; border-radius:var(--r-xl);
-  font-size:.65rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase;
-  margin-bottom:1.4rem;
+.hero-label::before{content:'';width:28px;height:1px;background:var(--oro);}
+.hero-h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.8rem,6vw,5rem);
+  font-weight:300;line-height:1.08;letter-spacing:-.01em;
+  color:var(--blanco);margin-bottom:1.2rem;
 }
-.hero-etiqueta::before {
-  content:''; width:6px; height:6px; border-radius:50%;
-  background:var(--dorado); animation:pulso 2s ease-in-out infinite;
+.hero-h1 em{font-style:italic;color:var(--oro-v);}
+.hero-p{
+  font-size:.95rem;font-weight:300;line-height:1.85;
+  color:rgba(240,232,213,.7);margin-bottom:2rem;max-width:400px;
 }
-@keyframes pulso { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
-.hero-h1 {
-  font-family:'Cormorant', serif;
-  font-size:clamp(3rem,7vw,5.8rem);
-  font-weight:300; line-height:1.05; letter-spacing:-.01em;
-  color:var(--blanco); margin-bottom:1.4rem;
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:#25d366;color:#fff;
+  padding:.8rem 1.6rem;border-radius:var(--r-xl);
+  font-size:.8rem;font-weight:500;
+  box-shadow:0 4px 20px rgba(37,211,102,.3);
+  transition:transform .2s,box-shadow .2s;
 }
-.hero-h1 em { font-style:italic; color:var(--dorado-v); font-weight:300; }
-.hero-desc {
-  font-size:1rem; font-weight:300; line-height:1.8;
-  color:rgba(242,234,216,0.72); margin-bottom:2.2rem; max-width:440px;
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.4);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1px solid rgba(240,232,213,.25);color:rgba(240,232,213,.75);
+  padding:.8rem 1.6rem;border-radius:var(--r-xl);
+  font-size:.8rem;font-weight:300;
+  transition:border-color .2s,color .2s;
 }
-.hero-acciones { display:flex; gap:.9rem; flex-wrap:wrap; align-items:center; }
-.btn-wa {
-  display:inline-flex; align-items:center; gap:.7rem;
-  background:#25d366; color:#fff;
-  padding:.85rem 1.7rem; border-radius:var(--r-xl);
-  font-size:.82rem; font-weight:600; letter-spacing:.04em;
-  box-shadow:0 4px 20px rgba(37,211,102,0.35);
-  transition:transform .2s, box-shadow .2s;
+.btn-ghost:hover{border-color:var(--oro);color:var(--oro-v);}
+.hero-stats{
+  position:absolute;right:2.5rem;bottom:5rem;z-index:2;
+  display:flex;flex-direction:column;gap:.6rem;align-items:flex-end;
 }
-.btn-wa:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(37,211,102,0.45); }
-.btn-galeria {
-  display:inline-flex; align-items:center; gap:.6rem;
-  border:1px solid rgba(242,234,216,0.3); color:rgba(242,234,216,0.8);
-  padding:.85rem 1.7rem; border-radius:var(--r-xl);
-  font-size:.82rem; font-weight:400;
-  transition:border-color .2s, color .2s;
+.hstat{
+  display:flex;align-items:center;gap:.6rem;
+  background:rgba(8,12,9,.5);border:1px solid rgba(184,146,58,.18);
+  padding:.45rem .9rem;border-radius:var(--r-xl);
+  backdrop-filter:blur(10px);
 }
-.btn-galeria:hover { border-color:var(--dorado); color:var(--dorado-v); }
-.hero-stats {
-  position:absolute; right:3rem; bottom:5rem; z-index:2;
-  display:flex; flex-direction:column; gap:.8rem; align-items:flex-end;
+.hstat-n{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:400;color:var(--oro-v);}
+.hstat-t{font-size:.62rem;color:rgba(240,232,213,.45);letter-spacing:.05em;}
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  color:rgba(240,232,213,.25);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+  animation:bob 2.2s ease-in-out infinite;
 }
-.hero-stat {
-  display:flex; align-items:center; gap:.7rem;
-  background:rgba(10,14,11,0.55); border:1px solid rgba(201,168,76,0.2);
-  padding:.5rem 1rem; border-radius:var(--r-xl);
-  backdrop-filter:blur(8px);
-}
-.hero-stat-num {
-  font-family:'Cormorant',serif; font-size:1.3rem; font-weight:600;
-  color:var(--dorado-v);
-}
-.hero-stat-txt { font-size:.68rem; color:rgba(242,234,216,0.55); letter-spacing:.05em; }
-.scroll-ind {
-  position:absolute; bottom:2.2rem; left:50%; transform:translateX(-50%);
-  z-index:2; display:flex; flex-direction:column; align-items:center; gap:.5rem;
-  color:rgba(242,234,216,0.3); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase;
-  animation:bajar 2s ease-in-out infinite;
-}
-@keyframes bajar { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
-.scroll-linea { width:1px; height:36px; background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.5)); }
+.scroll-line{width:1px;height:32px;background:linear-gradient(to bottom,transparent,rgba(184,146,58,.4));}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 
-/* ── CINTA ── */
-.cinta {
-  background:var(--selva);
-  border-top:1px solid rgba(201,168,76,0.15);
-  border-bottom:1px solid rgba(201,168,76,0.15);
-  padding:.9rem 0; overflow:hidden; white-space:nowrap;
+/* ── SECCIONES ── */
+section{padding:5rem 2.5rem;}
+.label{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.62rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--salvia);margin-bottom:1rem;
 }
-.cinta-inner {
-  display:inline-flex; gap:0;
-  animation:cinta 28s linear infinite;
+.label::before{content:'';width:20px;height:1px;background:var(--salvia);}
+.label-claro{color:rgba(168,197,171,.6);}
+.label-claro::before{background:rgba(168,197,171,.4);}
+h2{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.9rem,3.5vw,2.8rem);
+  font-weight:300;line-height:1.18;letter-spacing:-.01em;
+  color:var(--profundo);margin-bottom:1rem;
 }
-@keyframes cinta { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.cinta-item {
-  display:inline-flex; align-items:center; gap:1rem;
-  padding:0 2.5rem;
-  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
-  color:rgba(242,234,216,0.45);
-}
-.cinta-sep { color:var(--dorado); opacity:.5; font-size:.8rem; }
-
-section { padding:5rem 3rem; }
-.chip {
-  display:inline-flex; align-items:center; gap:.5rem;
-  border:1px solid rgba(45,102,68,0.3); color:var(--palma);
-  background:rgba(45,102,68,0.07);
-  padding:.28rem .9rem; border-radius:var(--r-xl);
-  font-size:.65rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
-  margin-bottom:1.1rem;
-}
-.chip-claro {
-  border-color:rgba(139,212,204,0.3); color:var(--agua-claro);
-  background:rgba(91,188,176,0.1);
-}
-h2 {
-  font-family:'Cormorant', serif;
-  font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:400; line-height:1.15; letter-spacing:-.01em;
-  color:var(--selva); margin-bottom:1.1rem;
-}
-h2 em { font-style:italic; font-weight:300; color:var(--palma); }
-h2.claro { color:var(--crema); }
-h2.claro em { color:var(--agua-claro); }
-.p-base {
-  font-size:.97rem; font-weight:300; line-height:1.85;
-  color:var(--gris); max-width:500px;
-}
-.p-claro { color:rgba(242,234,216,0.6); }
+h2 em{font-style:italic;font-weight:300;color:var(--bosque);}
+h2.cl{color:var(--crema);}
+h2.cl em{color:var(--menta);}
+.p{font-size:.93rem;font-weight:300;line-height:1.85;color:var(--gris);max-width:480px;}
+.p-cl{color:rgba(240,232,213,.55);}
 
 /* ── NOSOTROS ── */
-#nosotros {
-  background:var(--crema);
-  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
-}
-.fotos-mosaic {
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  grid-template-rows:260px 180px;
-  gap:10px;
-}
-.fotos-mosaic img {
-  width:100%; height:100%; object-fit:cover;
-  border-radius:var(--r-md); transition:transform .5s;
-}
-.fotos-mosaic img:hover { transform:scale(1.03); }
-.foto-tall { grid-row:span 2; border-radius:var(--r-lg) !important; }
-.nums {
-  display:flex; gap:1.5rem; margin-top:2.8rem; flex-wrap:wrap;
-}
-.num-bloque {
-  border-left:2px solid var(--dorado); padding-left:1rem;
-}
-.num-val {
-  font-family:'Cormorant',serif; font-size:2rem; font-weight:600;
-  color:var(--selva); line-height:1;
-}
-.num-lbl { font-size:.7rem; color:var(--gris); margin-top:.25rem; letter-spacing:.05em; }
+#nosotros{background:var(--crema);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.mosaic{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:240px 160px;gap:8px;}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:var(--r);transition:transform .5s;}
+.mosaic img:hover{transform:scale(1.03);}
+.m-tall{grid-row:span 2;border-radius:var(--r-lg)!important;}
+.nums{display:flex;gap:1.5rem;margin-top:2.2rem;flex-wrap:wrap;}
+.num{border-left:2px solid var(--oro);padding-left:.9rem;}
+.num-v{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:300;color:var(--profundo);line-height:1;}
+.num-l{font-size:.68rem;color:var(--gris);margin-top:.2rem;letter-spacing:.04em;}
 
-/* ── AMENIDADES ── */
-#amenidades {
-  background:var(--selva);
-  position:relative; overflow:hidden;
+/* ── INSTALACIONES ── */
+#instalaciones{background:var(--carbon);}
+.inst-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;margin-top:2.8rem;
+  background:rgba(184,146,58,.08);
+  border:1px solid rgba(184,146,58,.08);
+  border-radius:var(--r-lg);overflow:hidden;
 }
-#amenidades::before {
-  content:'';
-  position:absolute; top:-100px; right:-100px;
-  width:500px; height:500px; border-radius:50%;
-  background:radial-gradient(circle, rgba(91,188,176,0.07) 0%, transparent 65%);
-  pointer-events:none;
+.inst-item{
+  background:var(--carbon);
+  padding:2rem 1.6rem;
+  transition:background .3s;
 }
-.amenidades-grid {
-  display:grid; grid-template-columns:repeat(2,1fr);
-  gap:1.5rem; margin-top:3rem;
+.inst-item:hover{background:rgba(36,61,40,.5);}
+.inst-ico{font-size:1.3rem;margin-bottom:.8rem;}
+.inst-item h4{
+  font-family:'Fraunces',serif;font-size:1rem;font-weight:400;
+  color:var(--oro-v);margin-bottom:.35rem;
 }
-.amenidad {
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(201,168,76,0.1);
-  border-radius:var(--r-md); padding:1.8rem;
-  transition:background .3s, border-color .3s;
-}
-.amenidad:hover { background:rgba(45,102,68,0.3); border-color:rgba(201,168,76,0.25); }
-.amenidad-ico { font-size:1.4rem; margin-bottom:.7rem; }
-.amenidad h4 {
-  font-family:'Cormorant',serif; font-size:1.05rem; font-weight:400;
-  color:var(--dorado-v); margin-bottom:.3rem;
-}
-.amenidad p { font-size:.8rem; font-weight:300; color:rgba(242,234,216,0.5); line-height:1.6; }
+.inst-item p{font-size:.78rem;font-weight:300;color:rgba(240,232,213,.4);line-height:1.65;}
 
-/* ── EVENTOS ── */
-#eventos { background:var(--crema); }
-.eventos-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1rem; margin-top:2.5rem;
+/* ── VIDEO CTA ── */
+#video-sec{
+  background:var(--profundo);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:5rem 2.5rem;
+  position:relative;overflow:hidden;
 }
-.evento-card {
-  position:relative; border-radius:var(--r-lg); overflow:hidden;
-  height:280px; cursor:default;
+#video-sec::before{
+  content:'';position:absolute;inset:0;
+  background:url('quinta_noche.webp') center/cover no-repeat;
+  opacity:.18;
 }
-.evento-card img {
-  width:100%; height:100%; object-fit:cover;
-  transition:transform .6s;
-  filter:brightness(.75);
+.video-cont{position:relative;z-index:2;max-width:520px;}
+.play-btn{
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(184,146,58,.9);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.8rem;
+  transition:transform .2s,background .2s;
+  box-shadow:0 0 0 12px rgba(184,146,58,.12);
 }
-.evento-card:hover img { transform:scale(1.06); filter:brightness(.9); }
-.evento-overlay {
-  position:absolute; inset:0;
-  background:linear-gradient(to top, rgba(10,14,11,0.9) 0%, rgba(10,14,11,0.1) 60%);
-  display:flex; flex-direction:column; justify-content:flex-end;
-  padding:1.8rem;
+.play-btn:hover{transform:scale(1.08);background:var(--oro-v);}
+.play-btn svg{margin-left:4px;}
+#video-sec h2{color:var(--crema);margin-bottom:.8rem;}
+#video-sec .p{color:rgba(240,232,213,.55);margin:0 auto 1.8rem;}
+.btn-reel{
+  display:inline-flex;align-items:center;gap:.6rem;
+  border:1px solid rgba(184,146,58,.4);color:var(--oro-v);
+  padding:.75rem 1.6rem;border-radius:var(--r-xl);
+  font-size:.78rem;font-weight:400;letter-spacing:.06em;
+  transition:background .2s,border-color .2s;
 }
-.evento-ico { font-size:1.5rem; margin-bottom:.5rem; }
-.evento-card h3 {
-  font-family:'Cormorant',serif; font-size:1.4rem; font-weight:400;
-  color:var(--crema); margin-bottom:.3rem;
-}
-.evento-card p { font-size:.78rem; color:rgba(242,234,216,0.6); line-height:1.6; }
+.btn-reel:hover{background:rgba(184,146,58,.1);border-color:var(--oro-v);}
 
 /* ── GALERÍA ── */
-#galeria { background:var(--negro); padding-bottom:5rem; }
-#galeria h2 { color:var(--crema); }
-.galeria-grid {
-  margin-top:2.5rem;
+#galeria{background:var(--negro);padding-bottom:4rem;}
+.gal-grid{
+  margin-top:2.2rem;
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  grid-template-rows:280px 200px;
-  gap:8px;
+  grid-template-rows:260px 190px;
+  gap:6px;
 }
-.galeria-grid img {
-  width:100%; height:100%; object-fit:cover;
-  transition:transform .5s, filter .4s;
-  filter:brightness(.85) saturate(1.1);
-  cursor:zoom-in;
+.gal-grid img{
+  width:100%;height:100%;object-fit:cover;
+  border-radius:var(--r);
+  filter:brightness(.88) saturate(1.05);
+  transition:transform .5s,filter .4s;cursor:zoom-in;
 }
-.galeria-grid img:hover { transform:scale(1.04); filter:brightness(1) saturate(1.2); }
-.g1 { grid-column:span 5; grid-row:span 2; border-radius:var(--r-lg) 0 0 var(--r-lg); }
-.g2 { grid-column:span 4; border-radius:0 var(--r-lg) 0 0; }
-.g3 { grid-column:span 3; border-radius:0 0 0 0; }
-.g4 { grid-column:span 4; border-radius:0 0 0 0; }
-.g5 { grid-column:span 3; border-radius:0 var(--r-lg) var(--r-lg) 0; }
+.gal-grid img:hover{transform:scale(1.03);filter:brightness(1) saturate(1.1);}
+.g1{grid-column:span 5;grid-row:span 2;border-radius:var(--r-lg)!important;}
+.g2{grid-column:span 4;}
+.g3{grid-column:span 3;}
+.g4{grid-column:span 3;}
+.g5{grid-column:span 4;}
+.g6{grid-column:span 5;border-radius:0 0 var(--r-lg) 0!important;}
 
 /* Lightbox */
-.lightbox {
-  display:none; position:fixed; inset:0; z-index:999;
-  background:rgba(0,0,0,0.95); align-items:center; justify-content:center;
-}
-.lightbox.open { display:flex; }
-.lightbox img { max-width:90vw; max-height:90vh; object-fit:contain; border-radius:var(--r-md); }
-.lightbox-close {
-  position:absolute; top:1.5rem; right:1.5rem;
-  background:none; border:1px solid rgba(255,255,255,0.2);
-  color:#fff; width:40px; height:40px; border-radius:50%;
-  font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
-}
+.lb{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.95);align-items:center;justify-content:center;}
+.lb.open{display:flex;}
+.lb img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:var(--r);}
+.lb-x{position:absolute;top:1.2rem;right:1.2rem;background:none;border:1px solid rgba(255,255,255,.2);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 
 /* ── RESEÑAS ── */
-#resenas { background:var(--crema); }
-.resenas-top {
-  display:flex; justify-content:space-between; align-items:flex-start;
-  gap:2rem; flex-wrap:wrap; margin-bottom:3rem;
-}
-.rating-vis {
-  display:flex; align-items:baseline; gap:.6rem;
-}
-.rating-num {
-  font-family:'Cormorant',serif; font-size:4.5rem; font-weight:300;
-  color:var(--selva); line-height:1;
-}
-.rating-dets { display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:.4rem; }
-.rating-stars { color:var(--dorado); font-size:1rem; letter-spacing:3px; }
-.rating-base { font-size:.72rem; color:var(--gris); margin-top:.2rem; }
-.resenas-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1rem;
-}
-.resena {
-  background:var(--blanco); padding:1.8rem;
-  border-radius:var(--r-lg); border:1px solid rgba(26,61,43,0.08);
+#resenas{background:var(--crema);}
+.res-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.rating-bloque{text-align:right;}
+.rating-n{font-family:'Fraunces',serif;font-size:4rem;font-weight:300;color:var(--profundo);line-height:1;}
+.rating-s{color:var(--oro);font-size:.95rem;letter-spacing:3px;}
+.rating-b{font-size:.7rem;color:var(--gris);margin-top:.2rem;}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+.res-card{
+  background:var(--blanco);padding:1.6rem;
+  border-radius:var(--r-lg);border:1px solid rgba(26,46,30,.07);
   transition:box-shadow .3s;
 }
-.resena:hover { box-shadow:0 8px 32px rgba(26,61,43,0.1); }
-.resena-stars { color:var(--dorado); font-size:.85rem; margin-bottom:1rem; }
-.resena-txt {
-  font-size:.9rem; line-height:1.8; color:var(--gris);
-  margin-bottom:1.4rem; font-style:italic;
-}
-.resena-autor { display:flex; align-items:center; gap:.8rem; }
-.autor-av {
-  width:38px; height:38px; border-radius:50%; flex-shrink:0;
-  background:linear-gradient(135deg, var(--bosque), var(--agua));
-  display:flex; align-items:center; justify-content:center;
-  color:#fff; font-size:.8rem; font-weight:600;
-}
-.autor-nom { font-size:.85rem; font-weight:500; color:var(--selva); }
-.autor-fecha { font-size:.72rem; color:var(--gris); margin-top:1px; }
-.resena-google {
-  display:flex; align-items:center; gap:.4rem;
-  margin-top:1rem; padding-top:1rem;
-  border-top:1px solid rgba(26,61,43,0.07);
-  font-size:.68rem; color:var(--gris); letter-spacing:.05em;
-}
-.google-dot { width:8px; height:8px; border-radius:50%; background:#4285f4; }
+.res-card:hover{box-shadow:0 6px 24px rgba(26,46,30,.08);}
+.res-stars{color:var(--oro);font-size:.8rem;margin-bottom:.9rem;}
+.res-txt{font-size:.88rem;line-height:1.8;color:var(--gris);margin-bottom:1.2rem;font-style:italic;}
+.res-autor{display:flex;align-items:center;gap:.7rem;}
+.res-av{width:36px;height:36px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--bosque),var(--salvia));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:500;}
+.res-nom{font-size:.82rem;font-weight:500;color:var(--profundo);}
+.res-fecha{font-size:.68rem;color:var(--gris);}
+.res-badge{display:flex;align-items:center;gap:.4rem;margin-top:.9rem;padding-top:.9rem;border-top:1px solid rgba(26,46,30,.06);font-size:.65rem;color:var(--gris);}
+.g-dot{width:7px;height:7px;border-radius:50%;background:#4285f4;flex-shrink:0;}
 
 /* ── CONTACTO ── */
-#contacto {
-  background:var(--bosque);
-  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;
+#contacto{
+  background:var(--profundo);
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
 }
-#contacto .chip-claro { border-color:rgba(139,212,204,0.3); color:var(--agua-claro); }
-.info-items { display:flex; flex-direction:column; gap:1.1rem; margin-top:2rem; }
-.info-item {
-  display:flex; align-items:flex-start; gap:1rem;
-  font-size:.9rem; line-height:1.65; color:rgba(242,234,216,0.75);
+.info-list{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem;}
+.info-row{display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;line-height:1.65;color:rgba(240,232,213,.7);}
+.info-ico{width:36px;height:36px;flex-shrink:0;border-radius:var(--r);background:rgba(184,146,58,.1);border:1px solid rgba(184,146,58,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;}
+.info-row a{color:var(--menta);}
+.info-row a:hover{text-decoration:underline;}
+.redes-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.6rem;}
+.red-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1px solid rgba(168,197,171,.2);color:var(--menta);
+  padding:.55rem 1rem;border-radius:var(--r-xl);
+  font-size:.75rem;background:rgba(168,197,171,.05);
+  transition:background .2s,border-color .2s;
 }
-.info-item-ico {
-  width:38px; height:38px; flex-shrink:0; border-radius:var(--r-sm);
-  border:1px solid rgba(91,188,176,0.25);
-  display:flex; align-items:center; justify-content:center;
-  font-size:1rem; background:rgba(91,188,176,0.08);
+.red-btn:hover{background:rgba(168,197,171,.1);border-color:rgba(168,197,171,.4);}
+.btn-wa-g{
+  display:inline-flex;align-items:center;gap:.7rem;
+  background:#25d366;color:#fff;
+  padding:.95rem 1.8rem;border-radius:var(--r-xl);
+  font-size:.85rem;font-weight:500;
+  box-shadow:0 4px 18px rgba(37,211,102,.25);
+  margin-top:2rem;
+  transition:transform .2s,box-shadow .2s;
 }
-.info-item a { color:var(--agua-claro); }
-.info-item a:hover { text-decoration:underline; }
-.btn-wa-grande {
-  display:inline-flex; align-items:center; gap:.8rem;
-  background:#25d366; color:#fff;
-  padding:1rem 2rem; border-radius:var(--r-xl);
-  font-size:.88rem; font-weight:600;
-  box-shadow:0 4px 20px rgba(37,211,102,0.3);
-  margin-top:2.2rem;
-  transition:transform .2s, box-shadow .2s;
-}
-.btn-wa-grande:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(37,211,102,0.42); }
-.mapa {
-  border-radius:var(--r-lg); overflow:hidden;
-  border:1px solid rgba(91,188,176,0.2);
-  height:100%; min-height:400px;
-}
-.mapa iframe { width:100%; height:100%; border:none; }
+.btn-wa-g:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(37,211,102,.38);}
+.mapa-box{border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(184,146,58,.15);height:100%;min-height:380px;}
+.mapa-box iframe{width:100%;height:100%;border:none;}
 
 /* ── FOOTER ── */
-footer {
-  background:var(--negro);
-  border-top:1px solid rgba(201,168,76,0.12);
-  padding:3rem;
-  display:grid; grid-template-columns:1fr auto 1fr;
-  align-items:center; gap:2rem;
+footer{
+  background:var(--negro);border-top:1px solid rgba(184,146,58,.1);
+  padding:2.5rem;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;
 }
-.footer-marca {
-  font-family:'Cormorant',serif; font-size:1.1rem; font-weight:600;
-  color:var(--dorado-v); letter-spacing:.06em;
-}
-.footer-marca span { display:block; font-family:'Outfit',sans-serif; font-size:.6rem; font-weight:300; color:rgba(242,234,216,0.25); letter-spacing:.2em; text-transform:uppercase; margin-top:3px; }
-.footer-copy { font-size:.68rem; color:rgba(242,234,216,0.22); text-align:center; line-height:1.7; }
-.footer-redes { display:flex; justify-content:flex-end; gap:1.2rem; }
-.footer-redes a { font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(242,234,216,0.3); transition:color .2s; }
-.footer-redes a:hover { color:var(--dorado-v); }
+.f-marca{display:flex;align-items:center;gap:.7rem;}
+.f-marca img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid rgba(184,146,58,.3);}
+.f-nom{font-family:'Fraunces',serif;font-size:1rem;font-weight:400;color:var(--oro-v);}
+.f-sub{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,232,213,.2);margin-top:1px;}
+.f-copy{font-size:.68rem;color:rgba(240,232,213,.2);text-align:center;line-height:1.8;}
+.f-redes{display:flex;justify-content:flex-end;gap:1rem;}
+.f-redes a{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.25);transition:color .2s;}
+.f-redes a:hover{color:var(--oro-v);}
 
 /* ── REVEAL ── */
-.rev { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
-.rev.in { opacity:1; transform:none; }
-.rev-d1 { transition-delay:.1s; }
-.rev-d2 { transition-delay:.2s; }
-.rev-d3 { transition-delay:.3s; }
+.rev{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.rev.in{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
 
 /* ── RESPONSIVE ── */
-@media(max-width:900px) {
-  #nav { padding:0 1.4rem; }
-  .nav-links { display:none; }
-  .hamburger { display:flex; }
-  section { padding:4rem 1.4rem; }
-  #hero { padding:0 1.4rem 4rem; }
-  .hero-stats { display:none; }
-  .hero-h1 { font-size:clamp(2.6rem,9vw,4rem); }
-  #nosotros, #contacto { grid-template-columns:1fr; gap:2rem; }
-  .fotos-mosaic { grid-template-rows:180px 140px; }
-  .galeria-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-  .g1,.g2,.g3,.g4,.g5 { grid-column:span 1; height:180px; border-radius:var(--r-md) !important; }
-  .g1 { grid-row:span 1; }
-  .mapa { min-height:280px; }
-  footer { grid-template-columns:1fr; text-align:center; }
-  .footer-redes { justify-content:center; }
-  .resenas-top { flex-direction:column; }
-  .amenidades-grid { grid-template-columns:1fr 1fr; }
+@media(max-width:900px){
+  #nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .ham{display:flex;}
+  section{padding:4rem 1.2rem;}
+  #hero{padding:0 1.2rem 4rem;}
+  .hero-h1{font-size:clamp(2.4rem,8vw,3.5rem);}
+  .hero-stats{display:none;}
+  #nosotros,#contacto{grid-template-columns:1fr;gap:2rem;}
+  .mosaic{grid-template-rows:170px 130px;}
+  .inst-grid{grid-template-columns:1fr 1fr;}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 1;height:170px;border-radius:var(--r)!important;}
+  .g1{grid-row:span 1;}
+  .mapa-box{min-height:260px;}
+  footer{grid-template-columns:1fr;text-align:center;}
+  .f-redes{justify-content:center;}
+  .f-marca{justify-content:center;}
+  .res-top{flex-direction:column;}
+  .rating-bloque{text-align:left;}
 }
-@media(max-width:500px) {
-  .hero-acciones { flex-direction:column; align-items:stretch; }
-  .btn-wa, .btn-galeria { justify-content:center; }
-  .amenidades-grid { grid-template-columns:1fr; }
+@media(max-width:500px){
+  .hero-btns{flex-direction:column;align-items:stretch;}
+  .btn-wa,.btn-ghost{justify-content:center;}
+  .inst-grid{grid-template-columns:1fr;}
+  .gal-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
@@ -523,287 +384,188 @@ footer {
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-marca">
+  <a href="#hero" class="nav-logo">
     <img src="logo.jpg" alt="Quinta Juanes">
-    <div>
-      <span class="nav-marca-top">Quinta Juanes</span>
-      <span class="nav-marca-sub">Centro de Eventos · Calderitas</span>
+    <div class="nav-logo-txt">
+      <span class="nav-logo-nom">Quinta Juanes</span>
+      <span class="nav-logo-sub">Centro de Eventos · Calderitas</span>
     </div>
   </a>
   <ul class="nav-links">
     <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#amenidades">Instalaciones</a></li>
-    <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#instalaciones">Instalaciones</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#resenas">Reseñas</a></li>
-    <li><a href="#contacto" class="nav-reserva">Reservar</a></li>
+    <li><a href="#contacto" class="nav-cta">Reservar</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="ham" id="ham" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- MENÚ MÓVIL -->
-<div class="nav-mobile" id="navMobile">
-  <a href="#nosotros" class="nav-m-link">Nosotros</a>
-  <a href="#amenidades" class="nav-m-link">Instalaciones</a>
-  <a href="#eventos" class="nav-m-link">Eventos</a>
-  <a href="#galeria" class="nav-m-link">Galería</a>
-  <a href="#resenas" class="nav-m-link">Reseñas</a>
-  <a href="#contacto" class="nav-reserva-m">Reservar ahora</a>
+<!-- MÓVIL MENÚ -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#instalaciones">Instalaciones</a>
+  <a href="#galeria">Galería</a>
+  <a href="#resenas">Reseñas</a>
+  <a href="#contacto" class="mob-cta">Reservar ahora</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-foto"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-contenido">
-    <p class="hero-etiqueta">Calderitas, Quintana Roo</p>
-    <h1 class="hero-h1">
-      Tu celebración<br>más <em>memorable</em>
-    </h1>
-    <p class="hero-desc">Un espacio tropical único rodeado de palmeras, alberca y naturaleza. A 10 minutos de Chetumal, para eventos que se recuerdan toda la vida.</p>
-    <div class="hero-acciones">
+  <div class="hero-img"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-cont">
+    <p class="hero-label">Calderitas, Quintana Roo</p>
+    <h1 class="hero-h1">Tu celebración<br>más <em>especial</em></h1>
+    <p class="hero-p">Naturaleza tropical, alberca cristalina y tres palapas únicas. A 10 minutos de Chetumal, para eventos que se recuerdan siempre.</p>
+    <div class="hero-btns">
       <a href="https://wa.me/529831559045?text=Hola!%20Vi%20la%20página%20de%20Quinta%20Juanes%20y%20me%20gustaría%20cotizar%20un%20evento%20🌴%0A%0ATipo:%20%0AFecha:%20%0APersonas:" target="_blank" class="btn-wa">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Cotizar por WhatsApp
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Cotizar ahora
       </a>
-      <a href="#galeria" class="btn-galeria">Ver instalaciones →</a>
+      <a href="#galeria" class="btn-ghost">Ver el espacio →</a>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="hero-stat-num">4.4★</span>
-      <span class="hero-stat-txt">Google Maps</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">46</span>
-      <span class="hero-stat-txt">Reseñas reales</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">24h</span>
-      <span class="hero-stat-txt">Disponibilidad</span>
-    </div>
+    <div class="hstat"><span class="hstat-n">4.4★</span><span class="hstat-t">Google</span></div>
+    <div class="hstat"><span class="hstat-n">46</span><span class="hstat-t">Reseñas</span></div>
+    <div class="hstat"><span class="hstat-n">24h</span><span class="hstat-t">Disponible</span></div>
   </div>
-  <div class="scroll-ind">
-    <div class="scroll-linea"></div>
-    scroll
-  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div>scroll</div>
 </section>
-
-<!-- CINTA -->
-<div class="cinta">
-  <div class="cinta-inner">
-    <span class="cinta-item">Alberca<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Palapa principal<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Jardín tropical<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Área infantil<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Estacionamiento<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">XV Años<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Cumpleaños<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Reuniones<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Bodas<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Calderitas, Q.R.<span class="cinta-sep">◆</span></span>
-    <!-- duplicado para loop continuo -->
-    <span class="cinta-item">Alberca<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Palapa principal<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Jardín tropical<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Área infantil<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Estacionamiento<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">XV Años<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Cumpleaños<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Reuniones<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Bodas<span class="cinta-sep">◆</span></span>
-    <span class="cinta-item">Calderitas, Q.R.<span class="cinta-sep">◆</span></span>
-  </div>
-</div>
 
 <!-- NOSOTROS -->
 <section id="nosotros">
-  <div class="fotos-mosaic rev">
-    <img src="quinta_piscina.webp"  alt="Alberca Quinta Juanes" class="foto-tall">
-    <img src="quinta_elegante.webp" alt="Jardín con palmeras">
-    <img src="quinta_juegos.webp"   alt="Área infantil">
+  <div class="mosaic rev">
+    <img src="quinta_piscina.webp" alt="Alberca Quinta Juanes" class="m-tall">
+    <img src="quinta_vista2.jpg"   alt="Vista jardín y palmeras">
+    <img src="quinta_juegos.webp"  alt="Área infantil">
   </div>
   <div>
-    <p class="chip rev">Quiénes somos</p>
-    <h2 class="rev rev-d1">Un espacio <em>único</em> en el Caribe mexicano</h2>
-    <p class="p-base rev rev-d2">Quinta Juanes es un centro de eventos familiar en Calderitas, Quintana Roo. Ofrecemos un ambiente de relajamiento, tranquilidad y discreción, rodeado de naturaleza tropical y a solo minutos del centro de Chetumal.</p>
-    <div class="nums rev rev-d3">
-      <div class="num-bloque">
-        <p class="num-val">4.4★</p>
-        <p class="num-lbl">Calificación Google</p>
-      </div>
-      <div class="num-bloque">
-        <p class="num-val">46</p>
-        <p class="num-lbl">Reseñas verificadas</p>
-      </div>
-      <div class="num-bloque">
-        <p class="num-val">24h</p>
-        <p class="num-lbl">Disponibilidad</p>
-      </div>
+    <p class="label rev">Quiénes somos</p>
+    <h2 class="rev d1">Un espacio <em>único</em><br>en el Caribe mexicano</h2>
+    <p class="p rev d2">Quinta Juanes es un centro de eventos familiar en Calderitas, Quintana Roo. Un lugar de relajamiento, tranquilidad y discreción, rodeado de naturaleza tropical y a minutos del centro de Chetumal.</p>
+    <div class="nums rev d3">
+      <div class="num"><p class="num-v">4.4★</p><p class="num-l">Google Maps</p></div>
+      <div class="num"><p class="num-v">46</p><p class="num-l">Reseñas</p></div>
+      <div class="num"><p class="num-v">24h</p><p class="num-l">Disponible</p></div>
     </div>
   </div>
 </section>
 
-<!-- AMENIDADES -->
-<section id="amenidades">
-  <p class="chip chip-claro rev">Instalaciones</p>
-  <h2 class="claro rev rev-d1">Todo lo que <em>necesitas</em></h2>
-  <div class="amenidades-grid rev rev-d2">
-    <div class="amenidad">
-      <p class="amenidad-ico">🏊</p>
+<!-- INSTALACIONES -->
+<section id="instalaciones">
+  <p class="label label-claro rev">Instalaciones</p>
+  <h2 class="cl rev d1">Todo lo que <em>necesitas</em></h2>
+  <div class="inst-grid rev d2">
+    <div class="inst-item">
+      <p class="inst-ico">🏊</p>
       <h4>Alberca</h4>
-      <p>Amplia alberca con área de descanso y acceso desde la palapa principal</p>
+      <p>Amplia alberca con área de descanso y acceso directo desde la palapa</p>
     </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">🌴</p>
+    <div class="inst-item">
+      <p class="inst-ico">🌴</p>
       <h4>3 Palapas</h4>
-      <p>Palapa principal con capacidad para 60–70 personas, más dos palapas adicionales, una con asador incluido</p>
+      <p>Palapa principal para 60–70 personas, más dos adicionales — una con asador</p>
     </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">🌿</p>
+    <div class="inst-item">
+      <p class="inst-ico">🌿</p>
       <h4>Jardín tropical</h4>
-      <p>Amplias áreas verdes rodeadas de palmeras y vegetación natural</p>
+      <p>Amplias áreas verdes con palmeras y vegetación natural para toda la familia</p>
     </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">🎠</p>
+    <div class="inst-item">
+      <p class="inst-ico">🎠</p>
       <h4>Área infantil</h4>
       <p>Zona de juegos con columpios, resbaladilla y casita para los más pequeños</p>
     </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">🚗</p>
+    <div class="inst-item">
+      <p class="inst-ico">🚗</p>
       <h4>Estacionamiento</h4>
-      <p>Estacionamiento propio seguro para todos tus invitados</p>
+      <p>Estacionamiento propio y seguro para todos tus invitados</p>
     </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">💡</p>
-      <h4>Iluminación</h4>
-      <p>Luces colgantes y ambiente nocturno para eventos de noche inolvidables</p>
-    </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">🔒</p>
-      <h4>Privacidad total</h4>
-      <p>Espacio privado y exclusivo para tu evento, sin interferencias</p>
-    </div>
-    <div class="amenidad">
-      <p class="amenidad-ico">📍</p>
-      <h4>Ubicación ideal</h4>
-      <p>En Calderitas, a 10 minutos del centro de Chetumal por carretera</p>
+    <div class="inst-item">
+      <p class="inst-ico">🔒</p>
+      <h4>Espacio privado</h4>
+      <p>Tu evento completamente exclusivo, con total discreción y tranquilidad</p>
     </div>
   </div>
 </section>
 
-<!-- EVENTOS -->
-<section id="eventos">
-  <p class="chip rev">Tipos de evento</p>
-  <h2 class="rev rev-d1">Celebraciones para <em>cada ocasión</em></h2>
-  <div class="eventos-grid rev rev-d2">
-    <div class="evento-card">
-      <img src="quinta_noche.webp" alt="XV Años">
-      <div class="evento-overlay">
-        <p class="evento-ico">💃</p>
-        <h3>XV Años</h3>
-        <p>El escenario perfecto para la noche más especial de tu quinceañera</p>
-      </div>
-    </div>
-    <div class="evento-card">
-      <img src="quinta_piscina.webp" alt="Cumpleaños">
-      <div class="evento-overlay">
-        <p class="evento-ico">🎂</p>
-        <h3>Cumpleaños</h3>
-        <p>Para todas las edades, con alberca y área de juegos incluidos</p>
-      </div>
-    </div>
-    <div class="evento-card">
-      <img src="quinta_elegante.webp" alt="Reuniones familiares">
-      <div class="evento-overlay">
-        <p class="evento-ico">👨‍👩‍👧‍👦</p>
-        <h3>Reuniones familiares</h3>
-        <p>Convive en un ambiente natural, tranquilo y espacioso</p>
-      </div>
-    </div>
-    <div class="evento-card">
-      <img src="quinta_minipalapa.webp" alt="Eventos especiales">
-      <div class="evento-overlay">
-        <p class="evento-ico">🥂</p>
-        <h3>Eventos especiales</h3>
-        <p>Bodas, bautizos, graduaciones y toda celebración importante</p>
-      </div>
-    </div>
+<!-- VIDEO / REEL -->
+<section id="video-sec">
+  <div class="video-cont rev">
+    <button class="play-btn" onclick="window.open('https://www.instagram.com/reel/C_3vDPJxdGc/','_blank')" aria-label="Ver video">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <p class="label label-claro" style="justify-content:center;">El ambiente</p>
+    <h2 class="cl">Vívelo antes de <em>reservar</em></h2>
+    <p class="p p-cl" style="margin:0 auto 1.8rem;">Mira cómo se ve Quinta Juanes en un evento real. La luz, el ambiente, los detalles que hacen la diferencia.</p>
+    <a href="https://www.instagram.com/reel/C_3vDPJxdGc/" target="_blank" class="btn-reel">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Ver en Instagram
+    </a>
   </div>
 </section>
 
 <!-- GALERÍA -->
 <section id="galeria">
-  <p class="chip chip-claro rev">Galería</p>
-  <h2 class="claro rev rev-d1">Conoce <em>el espacio</em></h2>
-  <div class="galeria-grid rev rev-d2">
-    <img src="quinta_noche.webp"          alt="Evento nocturno" class="g1" onclick="abrirLightbox(this.src)">
-    <img src="quinta_piscina.webp"        alt="Alberca"         class="g2" onclick="abrirLightbox(this.src)">
-    <img src="quinta_minipalapa.webp"     alt="Jardín"          class="g3" onclick="abrirLightbox(this.src)">
-    <img src="quinta_juegos.webp"         alt="Área infantil"   class="g4" onclick="abrirLightbox(this.src)">
-    <img src="quinta_entrada.webp"        alt="Entrada"         class="g5" onclick="abrirLightbox(this.src)">
+  <p class="label label-claro rev">Galería</p>
+  <h2 class="cl rev d1">El <em>espacio</em></h2>
+  <div class="gal-grid rev d2">
+    <img src="quinta_noche.webp"    alt="Evento nocturno"       class="g1" onclick="lb(this.src)">
+    <img src="quinta_vista1.jpg"    alt="Vista alberca palapa"  class="g2" onclick="lb(this.src)">
+    <img src="quinta_minipalapa.webp" alt="Palapas y jardín"   class="g3" onclick="lb(this.src)">
+    <img src="quinta_palapas.jpg"   alt="Palapas de piedra"    class="g4" onclick="lb(this.src)">
+    <img src="quinta_vista2.jpg"    alt="Alberca y palmeras"   class="g5" onclick="lb(this.src)">
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="cerrarLightbox()">
-  <button class="lightbox-close" onclick="cerrarLightbox()">✕</button>
-  <img id="lightbox-img" src="" alt="">
+<div class="lb" id="lbx" onclick="cls()">
+  <button class="lb-x" onclick="cls()">✕</button>
+  <img id="lbimg" src="" alt="">
 </div>
 
 <!-- RESEÑAS -->
 <section id="resenas">
-  <div class="resenas-top">
+  <div class="res-top">
     <div class="rev">
-      <p class="chip">Opiniones</p>
+      <p class="label">Opiniones</p>
       <h2>Lo que dicen <em>nuestros clientes</em></h2>
     </div>
-    <div class="rating-vis rev">
-      <span class="rating-num">4.4</span>
-      <div class="rating-dets">
-        <p class="rating-stars">★★★★★</p>
-        <p class="rating-base">46 reseñas en Google Maps</p>
-      </div>
+    <div class="rating-bloque rev">
+      <p class="rating-n">4.4</p>
+      <p class="rating-s">★★★★★</p>
+      <p class="rating-b">46 reseñas en Google Maps</p>
     </div>
   </div>
-  <div class="resenas-grid rev rev-d1">
-    <div class="resena">
-      <p class="resena-stars">★★★★★</p>
-      <p class="resena-txt">"Excelente lugar para eventos familiares. Un ambiente de relajamiento, tranquilidad y discreción, rodeado de áreas verdes. Las instalaciones están muy bien cuidadas. Lo recomiendo ampliamente."</p>
-      <div class="resena-autor">
-        <div class="autor-av">YG</div>
-        <div>
-          <p class="autor-nom">Yolanda Gómez</p>
-          <p class="autor-fecha">Reseña en Google Maps</p>
-        </div>
+  <div class="res-grid rev d1">
+    <div class="res-card">
+      <p class="res-stars">★★★★★</p>
+      <p class="res-txt">"Excelente lugar para eventos familiares. Un ambiente de relajamiento, tranquilidad y discreción, rodeado de áreas verdes. Las instalaciones están muy bien cuidadas."</p>
+      <div class="res-autor">
+        <div class="res-av">YG</div>
+        <div><p class="res-nom">Yolanda Gómez</p><p class="res-fecha">Reseña en Google</p></div>
       </div>
-      <p class="resena-google"><span class="google-dot"></span> Verificado en Google</p>
+      <p class="res-badge"><span class="g-dot"></span>Verificado en Google Maps</p>
     </div>
-    <div class="resena">
-      <p class="resena-stars">★★★★★</p>
-      <p class="resena-txt">"Hicimos el XV de mi hija aquí y fue increíble. La palapa de noche con las luces quedó preciosa. El espacio es grande, la alberca fue un hit para todos los invitados."</p>
-      <div class="resena-autor">
-        <div class="autor-av">RM</div>
-        <div>
-          <p class="autor-nom">Rocío Martínez</p>
-          <p class="autor-fecha">Reseña en Google Maps</p>
-        </div>
+    <div class="res-card">
+      <p class="res-stars">★★★★★</p>
+      <p class="res-txt">"Hicimos el XV de mi hija aquí y fue increíble. La palapa de noche con las luces quedó espectacular. El espacio es grande y la alberca fue un hit para todos."</p>
+      <div class="res-autor">
+        <div class="res-av">RM</div>
+        <div><p class="res-nom">Rocío Martínez</p><p class="res-fecha">Reseña en Google</p></div>
       </div>
-      <p class="resena-google"><span class="google-dot"></span> Verificado en Google</p>
+      <p class="res-badge"><span class="g-dot"></span>Verificado en Google Maps</p>
     </div>
-    <div class="resena">
-      <p class="resena-stars">★★★★★</p>
-      <p class="resena-txt">"Muy buen lugar, tranquilo y rodeado de naturaleza. Los niños disfrutaron mucho el área de juegos y la alberca. El trato fue excelente. Lo recomiendo para reuniones familiares."</p>
-      <div class="resena-autor">
-        <div class="autor-av">JA</div>
-        <div>
-          <p class="autor-nom">Jorge Aranda</p>
-          <p class="autor-fecha">Reseña en Google Maps</p>
-        </div>
+    <div class="res-card">
+      <p class="res-stars">★★★★★</p>
+      <p class="res-txt">"Muy buen lugar, tranquilo y rodeado de naturaleza. Los niños disfrutaron mucho el área de juegos y la alberca. Excelente trato. Lo recomiendo totalmente."</p>
+      <div class="res-autor">
+        <div class="res-av">JA</div>
+        <div><p class="res-nom">Jorge Aranda</p><p class="res-fecha">Reseña en Google</p></div>
       </div>
-      <p class="resena-google"><span class="google-dot"></span> Verificado en Google</p>
+      <p class="res-badge"><span class="g-dot"></span>Verificado en Google Maps</p>
     </div>
   </div>
 </section>
@@ -811,61 +573,42 @@ footer {
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="rev">
-    <p class="chip chip-claro">Contacto</p>
-    <h2 class="claro rev-d1">Reserva tu <em>fecha</em></h2>
-    <p class="p-base p-claro rev-d2">Escríbenos por WhatsApp con el tipo de evento, fecha y número de personas. Te cotizamos sin compromiso.</p>
-    <div class="info-items">
-      <div class="info-item">
-        <span class="info-item-ico">📍</span>
-        <span>Coahuila Nte. 314 y 318<br>Calderitas, Quintana Roo, 77960</span>
-      </div>
-      <div class="info-item">
-        <span class="info-item-ico">📞</span>
-        <a href="tel:+529831559045">983 155 9045</a>
-      </div>
-      <div class="info-item">
-        <span class="info-item-ico">🕐</span>
-        <span>Abierto las 24 horas</span>
-      </div>
+    <p class="label label-claro">Contacto</p>
+    <h2 class="cl d1">Reserva tu <em>fecha</em></h2>
+    <p class="p p-cl d2">Escríbenos con el tipo de evento, fecha y número de personas. Te cotizamos sin compromiso.</p>
+    <div class="info-list">
+      <div class="info-row"><span class="info-ico">📍</span><span>Coahuila Nte. 314 y 318<br>Calderitas, Quintana Roo, 77960</span></div>
+      <div class="info-row"><span class="info-ico">📞</span><a href="tel:+529831559045">983 155 9045</a></div>
+      <div class="info-row"><span class="info-ico">🕐</span><span>Abierto las 24 horas</span></div>
     </div>
-    <!-- Redes sociales -->
-    <div style="margin-top:1.8rem;">
-      <p style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,234,216,0.35);margin-bottom:.9rem;">Síguenos en redes</p>
-      <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
-        <a href="https://instagram.com/quinta.juanes" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(139,212,204,0.3);color:var(--agua-claro);padding:.6rem 1.1rem;border-radius:48px;font-size:.8rem;font-weight:400;background:rgba(91,188,176,0.07);transition:background .2s;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-        <a href="https://www.facebook.com/people/Quinta-Juanes/pfbid036GnqRcEcZ6BwxDfj9QMyJ6tAymZjSHeTw5qak6CyDyqDQWc54qeVutKKfXdKaw9yl/" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(139,212,204,0.3);color:var(--agua-claro);padding:.6rem 1.1rem;border-radius:48px;font-size:.8rem;font-weight:400;background:rgba(91,188,176,0.07);transition:background .2s;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          Facebook
-        </a>
-      </div>
+    <div class="redes-row">
+      <a href="https://instagram.com/quinta.juanes" target="_blank" class="red-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/people/Quinta-Juanes/pfbid036GnqRcEcZ6BwxDfj9QMyJ6tAymZjSHeTw5qak6CyDyqDQWc54qeVutKKfXdKaw9yl/" target="_blank" class="red-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
     </div>
-    <a href="https://wa.me/529831559045?text=Hola!%20Vi%20su%20página%20web%20y%20me%20gustaría%20cotizar%20un%20evento%20en%20Quinta%20Juanes%20🌴%0A%0ATipo%20de%20evento:%20%0AFecha:%20%0ANo.%20de%20personas:" target="_blank" class="btn-wa-grande">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a href="https://wa.me/529831559045?text=Hola!%20Vi%20su%20página%20web%20y%20me%20gustaría%20cotizar%20un%20evento%20en%20Quinta%20Juanes%20🌴%0A%0ATipo%20de%20evento:%20%0AFecha:%20%0ANo.%20de%20personas:" target="_blank" class="btn-wa-g">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Enviar mensaje por WhatsApp
     </a>
   </div>
-  <div class="mapa rev rev-d1">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5!2d-88.17658!3d18.51956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5bab1f7f7f7f7f%3A0x0!2sCoahuila%20Nte%20314%2C%20Calderitas%2C%20Q.R.!5e0!3m2!1ses-419!2smx!4v1&markers=18.51956,-88.17658" allowfullscreen="" loading="lazy"></iframe>
+  <div class="mapa-box rev d1">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5!2d-88.17658!3d18.51956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5bab1f7f7f7f7f%3A0x0!2sCoahuila%20Nte%20314%2C%20Calderitas%2C%20Q.R.!5e0!3m2!1ses-419!2smx!4v1" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-marca" style="display:flex;align-items:center;gap:.8rem;">
-    <img src="logo.jpg" alt="Quinta Juanes" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(201,168,76,0.3);">
-    <div>
-      <p style="font-family:'Cormorant',serif;font-size:1.1rem;font-weight:600;color:var(--dorado-v);">Quinta Juanes</p>
-      <span>Centro de Eventos · Calderitas, Q.R.</span>
-    </div>
+  <div class="f-marca">
+    <img src="logo.jpg" alt="Quinta Juanes">
+    <div><p class="f-nom">Quinta Juanes</p><p class="f-sub">Centro de Eventos · Calderitas, Q.R.</p></div>
   </div>
-  <p class="footer-copy">
-    Coahuila Nte. 314 y 318, Calderitas, Q.R.<br>
-    983 155 9045 · Abierto 24 horas
-  </p>
-  <div class="footer-redes">
+  <p class="f-copy">Coahuila Nte. 314 y 318, Calderitas, Q.R.<br>983 155 9045 · Abierto 24 horas</p>
+  <div class="f-redes">
     <a href="https://instagram.com/quinta.juanes" target="_blank">Instagram</a>
     <a href="https://wa.me/529831559045" target="_blank">WhatsApp</a>
     <a href="https://www.facebook.com/people/Quinta-Juanes/pfbid036GnqRcEcZ6BwxDfj9QMyJ6tAymZjSHeTw5qak6CyDyqDQWc54qeVutKKfXdKaw9yl/" target="_blank">Facebook</a>
@@ -874,44 +617,33 @@ footer {
 
 <script>
 // Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
 
 // Hamburger
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('navMobile');
-ham.addEventListener('click', () => {
-  ham.classList.toggle('open');
-  mob.classList.toggle('open');
-  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');mob.classList.toggle('open');
+  document.body.style.overflow=mob.classList.contains('open')?'hidden':'';
 });
-mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  ham.classList.remove('open');
-  mob.classList.remove('open');
-  document.body.style.overflow = '';
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  ham.classList.remove('open');mob.classList.remove('open');document.body.style.overflow='';
 }));
 
 // Reveal
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 80);
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.rev').forEach(el => obs.observe(el));
+new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);});
+},{threshold:0.1}).observe(document.querySelectorAll('.rev').forEach?document.body:document.body);
+document.querySelectorAll('.rev').forEach(el=>{
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+  },{threshold:0.1}).observe(el);
+});
 
 // Lightbox
-function abrirLightbox(src) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function cerrarLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if(e.key==='Escape') cerrarLightbox(); });
+function lb(src){document.getElementById('lbimg').src=src;document.getElementById('lbx').classList.add('open');document.body.style.overflow='hidden';}
+function cls(){document.getElementById('lbx').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cls();});
 </script>
 </body>
 </html>
