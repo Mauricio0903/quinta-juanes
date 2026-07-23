@@ -94,14 +94,19 @@ const aiForm = document.getElementById('aiForm');
 const aiInput = document.getElementById('aiInput');
 const aiSuggestions = document.getElementById('aiSuggestions');
 
+function isMobile() { return window.matchMedia('(max-width: 640px)').matches; }
+
 aiFab.addEventListener('click', () => {
   aiPanel.classList.add('open');
   aiFab.style.display = 'none';
-  aiInput.focus();
+  if (isMobile()) document.body.style.overflow = 'hidden';
+  // En iOS el foco automático a veces empuja el layout; se retrasa levemente.
+  setTimeout(() => aiInput.focus(), 150);
 });
 aiClose.addEventListener('click', () => {
   aiPanel.classList.remove('open');
   aiFab.style.display = 'flex';
+  document.body.style.overflow = '';
 });
 
 let chatHistory = [];
