@@ -59,15 +59,23 @@ module.exports = async function handler(req, res) {
       parts: [{ text: m.content }]
     }));
 
-    // Lista de modelos a intentar en orden. Si Google renombra o retira el
-    // primero en el futuro, el sistema prueba automáticamente el siguiente
+    // Lista de modelos a intentar en orden. Si Google renombra, retira o
+    // satura el primero, el sistema prueba automáticamente el siguiente
     // en vez de romperse por completo.
-    const MODELS_TO_TRY = ['gemini-3.5-flash', 'gemini-2.5-flash', 'gemini-flash-latest'];
+    // Nota: "gemini-2.5-flash" se quitó porque Google ya no lo da de alta
+    // para API keys nuevas (confirmado por error 404 en producción).
+    const MODELS_TO_TRY = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-flash-latest'];
 
     let data = null;
-    let lastErrorText = '';
 
     for (const model of MODELS_TO_TRY) {
+      // "gemini-flash-latest" (alias antiguo) no acepta thinkingConfig,
+      // así que se lo mandamos solo a los modelos que sí lo soportan.
+      const supportsThinking = model !== 'gemini-flash-latest';
+      const generationConfig = supportsThinking
+        ? { temperature: 0.6, maxOutputTokens: 800, thinkingConfig: { thinkingBudget: 0 } }
+        : { temperature: 0.6, maxOutputTokens: 800 };
+
       const geminiRes = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
         {
@@ -76,11 +84,7 @@ module.exports = async function handler(req, res) {
           body: JSON.stringify({
             system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
             contents,
-            generationConfig: {
-              temperature: 0.6,
-              maxOutputTokens: 800,
-              thinkingConfig: { thinkingBudget: 0 }
-            }
+            generationConfig
           })
         }
       );
@@ -90,8 +94,8 @@ module.exports = async function handler(req, res) {
         break;
       }
 
-      lastErrorText = await geminiRes.text();
-      console.error(`Gemini error con modelo "${model}":`, lastErrorText);
+      const errText = await geminiRes.text();
+      console.error(`Gemini error con modelo "${model}":`, errText);
     }
 
     if (!data) {
