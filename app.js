@@ -96,39 +96,14 @@ const aiSuggestions = document.getElementById('aiSuggestions');
 
 function isMobile() { return window.matchMedia('(max-width: 640px)').matches; }
 
-// Ajusta el panel de chat en tiempo real cuando el teclado móvil aparece/desaparece
-function fitAIPanelToKeyboard() {
-  if (!window.visualViewport || !isMobile()) return;
-  const vv = window.visualViewport;
-  const h = Math.min(vv.height - 16, 560);
-  aiPanel.style.height = h + 'px';
-  aiPanel.style.maxHeight = h + 'px';
-  aiPanel.style.top = (vv.offsetTop + 8) + 'px';
-  aiPanel.style.bottom = 'auto';
-  window.scrollTo(0, 0);
-}
-
-if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', () => {
-    if (aiPanel.classList.contains('open')) fitAIPanelToKeyboard();
-  });
-}
-
 aiFab.addEventListener('click', () => {
   aiPanel.classList.add('open');
   aiFab.style.display = 'none';
-  if (isMobile()) {
-    document.body.style.overflow = 'hidden';
-    fitAIPanelToKeyboard();
-  }
+  if (isMobile()) document.body.style.overflow = 'hidden';
   setTimeout(() => aiInput.focus(), 150);
 });
 aiClose.addEventListener('click', () => {
   aiPanel.classList.remove('open');
-  aiPanel.style.height = '';
-  aiPanel.style.maxHeight = '';
-  aiPanel.style.top = '';
-  aiPanel.style.bottom = '';
   aiFab.style.display = 'flex';
   document.body.style.overflow = '';
 });
