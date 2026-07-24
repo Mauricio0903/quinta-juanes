@@ -162,11 +162,10 @@ em{font-style:italic;color:var(--oro);}
 .gal-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem;}
 .gf{background:transparent;border:1px solid rgba(240,232,213,.2);color:rgba(240,232,213,.6);padding:.5rem 1.1rem;border-radius:var(--r-xl);font-size:.72rem;letter-spacing:.05em;transition:all .2s;}
 .gf.active,.gf:hover{background:var(--oro);border-color:var(--oro);color:var(--negro);}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:.8rem;max-width:1300px;margin:0 auto;}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));grid-auto-rows:220px;gap:.8rem;max-width:1300px;margin:0 auto;}
 .gal-grid img{width:100%;height:100%;object-fit:cover;border-radius:var(--r);cursor:pointer;transition:transform .4s ease,opacity .3s ease;}
 .gal-grid img:hover{transform:scale(1.02);}
 .gal-grid img.hide{display:none;}
-.g1{grid-column:span 2;grid-row:span 2;} .g2{grid-column:span 2;} .g3{grid-column:span 1;} .g6{grid-column:span 1;} .g5{grid-column:span 2;grid-row:span 2;} .g4{grid-column:span 1;} .g7{grid-column:span 1;} .g8{grid-column:span 2;}
 .lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(8,12,9,.96);align-items:center;justify-content:center;padding:2rem;}
 .lb.open{display:flex;}
 .lb img{max-width:90vw;max-height:85vh;border-radius:var(--r);object-fit:contain;}
@@ -291,8 +290,7 @@ footer{background:var(--negro);padding:2.5rem clamp(1.2rem,4vw,2.5rem);display:f
   .trust-strip{gap:1rem 1.4rem;}
   .bento{grid-template-columns:1fr;}
   .b-big,.bcard{grid-column:span 1;aspect-ratio:4/3;}
-  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;}
-  .g1,.g5{grid-column:span 2;grid-row:span 1;aspect-ratio:16/10;}
+  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
   .quote-card{padding:1.3rem;}
   .qf-pills{gap:.4rem;}
   .pill{font-size:.72rem;padding:.45rem .85rem;}
@@ -307,5 +305,4 @@ footer{background:var(--negro);padding:2.5rem clamp(1.2rem,4vw,2.5rem);display:f
 @media (max-width:380px){
   .hero-h1{font-size:clamp(2rem,9vw,2.6rem);}
   .gal-grid{grid-template-columns:1fr;}
-  .g1,.g5{grid-column:span 1;}
 }
