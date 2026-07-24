@@ -59,32 +59,43 @@ module.exports = async function handler(req, res) {
       parts: [{ text: m.content }]
     }));
 
-    const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents,
-          generationConfig: {
-            temperature: 0.6,
-            maxOutputTokens: 500
-          }
-        })
-      }
-    );
+    // Lista de modelos a intentar en orden. Si Google renombra o retira el
+    // primero en el futuro, el sistema prueba automáticamente el siguiente
+    // en vez de romperse por completo.
+    const MODELS_TO_TRY = ['gemini-3.5-flash', 'gemini-2.5-flash', 'gemini-flash-latest'];
 
-    if (!geminiRes.ok) {
-      const errText = await geminiRes.text();
-      console.error('Gemini error:', errText);
+    let data = null;
+    let lastErrorText = '';
+
+    for (const model of MODELS_TO_TRY) {
+      const geminiRes = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+            contents,
+            generationConfig: { temperature: 0.6, maxOutputTokens: 500 }
+          })
+        }
+      );
+
+      if (geminiRes.ok) {
+        data = await geminiRes.json();
+        break;
+      }
+
+      lastErrorText = await geminiRes.text();
+      console.error(`Gemini error con modelo "${model}":`, lastErrorText);
+    }
+
+    if (!data) {
       res.status(200).json({
         reply: 'Ahora mismo no puedo responder por aquí. Escríbenos directo por WhatsApp y te atendemos al instante 🌴'
       });
       return;
     }
-
-    const data = await geminiRes.json();
 
     if (data?.promptFeedback?.blockReason) {
       console.error('Gemini bloqueó la respuesta:', data.promptFeedback.blockReason);
