@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quintajuanes.com/sitemap.xml
+Sitemap: https://quintajuanes.com.mx/sitemap.xml
